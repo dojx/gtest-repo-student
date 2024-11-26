@@ -60,17 +60,12 @@ TEST(StringCalculatorTestSuite, ExpectExceptionforNegativeNumber)
 {
   string input = "-7";
   string expectedValue = "Negative not allowed";
-  EXPECT_THROW({
-    try
-    {
-      add(input);
-    }
-    catch(string actualValue)
-    {
-      EXPECT_STREQ(actualValue, expectedValue);
-      throw;
-    }
-  }, expectedValue);
+  EXPECT_THROW(add(input), std::runtime_error);
+  try {
+    add(input);
+  } catch (const std::runtime_error& e) {
+    EXPECT_STREQ(e.what(), expectedValue.c_str());
+  }
 }
 
 /* 8. If there is a single 0 then the output is 0 */
