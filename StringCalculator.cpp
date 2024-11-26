@@ -23,6 +23,6 @@ int checkIsNotNumber(string input) {
 int add(string input)
 {
   int result = -1;
-  result = checkIsEmpty(input) | checkIsNotEmpty(input);
+  result = checkIsEmpty(input) | checkIsNotNumber(input);
   return result;
 }
