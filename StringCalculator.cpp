@@ -10,7 +10,6 @@ int checkIsEmpty(string input) {
 
 int checkIsNotNumber(string input) {
   int result = -1;
-  result = checkIsEmpty(input);
   for (char ch : input) {
     if (!isdigit(ch)) {
       result = 0;
