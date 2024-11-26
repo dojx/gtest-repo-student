@@ -1,4 +1,6 @@
 #include "StringCalculator.h"
+#include <cctype>
+#include <algorithm>
 
 int add(string input)
 {
