@@ -1,7 +1,7 @@
 #include "StringCalculator.h"
 #include <gtest/gtest.h>
 
-/* 	If there is no input then the output is 0 */
+/* If there is no input then the output is 0 */
 TEST(StringCalculatorTestSuite, ExpectZeroForEmptyInput) 
 {
   string input = "";
@@ -9,6 +9,7 @@ TEST(StringCalculatorTestSuite, ExpectZeroForEmptyInput)
   int actualValue = add(input);
   ASSERT_EQ(actualValue, expectedValue);
 }
+
 /* If the input is characters, then the returned sum is 0. */
 TEST(StringCalculatorTestSuite, ExpectZeroForCharacters) 
 {
