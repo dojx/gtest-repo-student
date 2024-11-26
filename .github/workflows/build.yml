@@ -38,5 +38,12 @@ jobs:
       run: |
         cd build
         ctest --output-on-failure
+
+    - name: Lizard Runner
+      uses: Uno-Takashi/Lizard-Runner@v3
+      with:
+          path: "./"
+          CCN: "3"
+          exclude: "./build/*"
         
    
