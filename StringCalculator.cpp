@@ -2,5 +2,8 @@
 
 int add(string input)
 {
-  throw "string not implemented";
+  if (input.empty()) {
+    return 0;
+  }
+  throw "invalid argument";
 }
