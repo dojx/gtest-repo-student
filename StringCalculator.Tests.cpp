@@ -59,14 +59,18 @@ TEST(StringCalculatorTestSuite, ExpectSumWithCustomDelimiter)
 TEST(StringCalculatorTestSuite, ExpectExceptionforNegativeNumber)
 {
   string input = "-7";
-  try
-  {
+  string expectedValue = "Negative not allowed";
+  EXPECT_THROW({
+    try
+    {
       add(input);
-  }
-  catch(const MyException& e)
-  {
-      EXPECT_STREQ("Negative not allowed", e.what());
-  }
+    }
+    catch(string actualValue)
+    {
+      EXPECT_STREQ(actualValue, expectedValue);
+      throw;
+    }
+  }, expectedValue);
 }
 
 /* 8. If there is a single 0 then the output is 0 */
